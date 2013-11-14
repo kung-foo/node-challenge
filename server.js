@@ -31,6 +31,7 @@ app.get('/', function(req, res) {
         tasks.push(function(callback) {
             // yay for rest APIs!
             request('http://api.icndb.com/jokes/random?exclude=[explicit]', function(error, response, body) {
+                console.log('chuck norris was here');
                 if (!error) {
                     // store joke based on date
                     output[d.format('YYYYMMDD')] = JSON.parse(body).value.joke;
